@@ -1,0 +1,37 @@
+!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #000000">
+
+        <!--Camera-->
+        <a-entity position="0 0 15">
+            <a-camera></a-camera>
+        </a-entity>
+        <a-assets timeout="10000">
+
+            <a-asset-item id="train-obj" src="./models/obj/train/tinker.obj"></a-asset-item>
+      <a-asset-item id="train-mtl" src="./models/obj/train/obj.mtl"></a-asset-item>
+
+        
+          <img id="bg" src="./images/desert.avif">
+      
+         </a-assets>
+
+         <a-box src="#bg"  position="0 2 -3" rotation="0 0 0" width="70" height="29"></a-box>
+
+         <a-entity obj-model="obj : #train-obj; mtl:#train-mtl " position="-18 -9 -3" rotation="-90 0 0" scale="0.1 0.1 0.1"
+         animation="property:position; from:-18 -9 -3; to:5 -9 -3; dir:front; loop:true; dur:3000;">
+         </a-entity>
+
+        
+          
+</a-scene>
+    
+</body>
+</html>
